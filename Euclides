@@ -1,0 +1,13 @@
+def mcd(a, b):
+    # Algoritmo de Euclides para encontrar el MCD
+    while b != 0:
+        a, b = b, a % b
+    return a
+
+def mcm(a, b):
+    # Calcular el MCM usando el MCD
+    return abs(a * b) // mcd(a, b)
+
+# Pruebas
+numeros_pares = [(48, 18), (21, 6), (72, 120), (14, 8)]
+resultados = [(a, b, mcm(a, b)) for a, b in pares_numeros]
